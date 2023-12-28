@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="leaderboard.css" />
+    <!-- <link rel="stylesheet" href="landing.css"> -->
+    <title>Hello, world!</title>
+  </head>
+
+  <body>
+    <div class="d-flex flex col justify-content-center">
+      <div class="banner my-1">
+        <h3 class="above-text">LeaderBoard</h3>
+        <img src="images/banner3.png" alt="banner image" class="img-fluid" />
+        <div class="picture-text">
+          <h4 class="text-dark">HIGH SCORE!</h4>
+          <ul class="d-flex flex-column align-items-center" id="scores">
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <audio controls autoplay style="display: none;">
+        <source src="audio/bgmusic.mp3" >
+        Your browser does not support the audio element.
+      </audio>
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyDGK206E9S077LKvQsK_XISHrRvS9NkqYM",
+        authDomain: "bridgethegap-1dcbe.firebaseapp.com",
+        projectId: "bridgethegap-1dcbe",
+        storageBucket: "bridgethegap-1dcbe.appspot.com",
+        messagingSenderId: "971823065997",
+        appId: "1:971823065997:web:827dc0ab980b1d9245ebc4",
+        measurementId: "G-GPL83XWZK9",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      document.addEventListener("DOMContentLoaded", function() {
+        fetch("https://bridgethegap-1dcbe-default-rtdb.firebaseio.com/userLevel.json")
+                .then(response => response.json())
+                .then(data => {
+                  const scoreMap = {};
+
+                  Object.values(data).forEach(({ name, score }) => {
+                    if (!scoreMap[name]) {
+                      scoreMap[name] = 0;
+                    }
+                    scoreMap[name] += parseInt(score || '0', 10);
+                  });
+
+                  const sortedScores = Object.entries(scoreMap).sort((a, b) => b[1] - a[1]);
+                  const topScores = sortedScores.slice(0, 5); // Adjust the number here to show more/less users
+
+                  const ulElement = document.getElementById("scores");
+                  if (!ulElement) return;
+
+                  topScores.forEach(([name, totalScore]) => {
+                    const newLiElement = document.createElement("li");
+                    name = localStorage.getItem("UserName") === name ? "You" : name;
+                    newLiElement.textContent = `${name} - ${totalScore}`;
+                    ulElement.appendChild(newLiElement);
+                  });
+                })
+                .catch(error => console.error('Error fetching data:', error));
+      });
+    </script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

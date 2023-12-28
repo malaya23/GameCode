@@ -1,0 +1,73 @@
+body {
+    background-image: url('images/landing-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Copperplate Gothic', 'Copperplate Gothic Light', sans-serif;
+
+}
+
+.banner {
+    position: relative;
+    display: inline-block;
+}
+
+.image-container img {
+    display: block;
+    width: 100%;
+}
+
+.img-fluid {
+    height: 70%;
+}
+
+.picture-text {
+    position: absolute;
+    top: 40%;
+    left: 39%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.above-text {
+    position: relative;
+    text-align: center;
+    transform: translate(-13%, 170%);
+    z-index: 999;
+}
+
+ul {
+    padding-left: 0rem
+}
+
+ul li {
+    list-style: auto;
+    /* font-weight: bold; */
+}
+
+@media (max-width: 600px) {
+
+    .img-fluid {
+        height: 100%;
+    }
+
+    .above-text {
+
+        transform: translate(0%, 200%);
+    }
+
+    .picture-text {
+        top: 60%;
+        left: 50%;
+
+    }
+
+    .picture-text h4 {
+        font-size: 1.5rem;
+    }
+
+    ul {
+        font-size: 1.5rem;
+
+    }
+}

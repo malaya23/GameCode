@@ -1,0 +1,100 @@
+
+/* Main container styles */
+.main-container {
+    position: relative;
+  }
+  
+  /* Inner container styles */
+  .inner-container {
+    position: relative;
+    background: #0c0303;
+    text-align: -webkit-center;
+  }
+  
+  /* Background image styles */
+  .background-img {
+    height: 100vh;
+  }
+  
+  /* Content styles */
+  .content {
+    width: -webkit-fill-available;
+    position: absolute;
+  }
+  
+  /* Title styles */
+  .title {
+    color: gray;
+    top: 1%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Backward and forward icon styles */
+  .backward-img {
+    height: 150px;
+    position: absolute;
+    top: 25%;
+    left: 1%;
+  }
+  
+  .forward-img {
+    position: absolute;
+    top: 25%;
+    right: 1%;
+  }
+  
+  /* Level blocks styles */
+  .level-blocks {
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    right: 15%;
+  }
+  
+  /* Bottom icons container styles */
+  .bottom-icons {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 17%;
+    overflow: hidden;
+  }
+  
+  /* Icon image styles */
+  .icon-img {
+    width: 12vw;
+  }
+  
+  .inner-levels img{
+    width: 12vw;
+  }
+  
+  .image-container {
+    position: relative;
+    display: inline-block; /* Ensures the container fits the content */
+  }
+  
+  .block-image {
+    display: block; /* Ensures the image takes the full width of the container */
+    max-width: 100%; /* Ensure image doesn't exceed its container */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  
+  .icon {
+    position: absolute;
+    top: 79%;
+    /* left: 30%; */
+    font-size: 20px;
+    color: black;
+    transform: translateX(-50%);
+  }
+  
+  /*  */

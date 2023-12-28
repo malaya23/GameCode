@@ -1,0 +1,80 @@
+body {
+    background-color: #241e20;
+}
+
+.banner {
+    position: relative;
+    display: inline-block;
+}
+
+.image-container img {
+    display: block;
+    width: 100%;
+}
+
+
+.picture-text {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.above-text {
+    position: relative;
+    text-align: center;
+    transform: translateY(200%);
+    z-index: 999;
+}
+
+.input-overlay input {
+    background: transparent;
+    border: none;
+    text-align: center;
+    color: white;
+    position: relative;
+    transform: translateY(-140%);
+    z-index: 999;
+}
+
+.input-overlay input:focus {
+    border: 1px solid transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.input-overlay h6 {
+    color: white;
+    position: relative;
+    transform: translateY(-300%);
+}
+
+/* Your existing styles go here */
+
+/* Media Query for screens with a maximum width of 600px */
+@media (max-width: 600px) {
+    .picture-text h5 {
+        font-size: 12px;
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .above-text {
+        /* Adjust styles for the above text */
+    }
+
+    .input-image {
+        width: 100px !important;
+
+    }
+
+    .input-overlay input {
+        width: 100px !important;
+        transform: translateY(-100%) !important;
+    }
+
+    .input-overlay h6 {
+        font-size: 9px !important;
+    }
+}
