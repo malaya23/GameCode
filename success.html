@@ -15,29 +15,20 @@
 </head>
 
 <body>
-    <div class="d-flex flex col justify-content-center">
-        <div class="banner my-1">
-            <!-- <h3 class="above-text">Register</h3> -->
-            <img src="assets/success.png" alt="banner image" class="img-fluid">
-            <div class="picture-text">
-                <!-- <h5 class="text-dark">JOIN THE ADVENTURE!</h5>
-                <h5 class="text-dark my-4">ENTER YOUR NAME TO REGISTER AND START YOUR QUEST</h5>
-                <div>
-                    <img src="images/input.png" alt="input-image" width="190" class="input-image">
-                    <div class="input-overlay">
-                        <input type="text" id="registerName">
-                    </div>
-                </div> -->
-                <div style="text-align: -webkit-center;" id="error">
-                    <img src="images/input.png" alt="input-image" width="190" class="input-image" style="width: 30vw; height: 100px;">
-                    <div class="input-overlay">
-                        <!-- <input type="text"> -->
-                        <h6 class="" style="margin-top: 20px;width: 17vw;font-size: small;color: rgb(235, 212, 212);">CONGRATULATIONS YOU HAVE SUCCESSFULLY COMPLETED THE LEVEL</h6>
-                    </div>
+<div class="d-flex flex-column justify-content-center align-items-center">
+    <div class="banner my-1">
+        <!-- <h3 class="above-text">Register</h3> -->
+        <img src="assets/success.png" alt="banner image" class="img-fluid">
+        <div class="picture-text">
+            <div style="text-align: center;" id="error">
+                <div class="input-overlay">
+                    <h6 style="margin-top: 20px; font-size: 1.5em; color: black; font-weight: bold;">Did you know?</h6>
+                    <blockquote id="trivia" style="font-size: 1em; color: black; text-align: center; font-weight: bold;"></blockquote>
                 </div>
             </div>
         </div>
     </div>
+</div>
     <audio controls autoplay >
         <source src="audio/levelup.wav" >
         Your browser does not support the audio element.

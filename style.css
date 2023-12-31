@@ -5,7 +5,7 @@ body {
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Copperplate Gothic', 'Copperplate Gothic Light', sans-serif;
   cursor: pointer;
 }
 
@@ -30,7 +30,7 @@ body {
   position: absolute;
   font-weight: 600;
   font-size: 0.8em;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Copperplate Gothic', 'Copperplate Gothic Light', sans-serif;
   text-align: center;
   transition: opacity 2s;
 }
@@ -45,7 +45,7 @@ body {
   border: none;
   font-weight: 700;
   font-size: 1.2em;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Copperplate Gothic', 'Copperplate Gothic Light', sans-serif;
   display: none;
   cursor: pointer;
 }

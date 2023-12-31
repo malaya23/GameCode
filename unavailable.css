@@ -47,7 +47,7 @@ body {
 .input-overlay h6 {
     color: white;
     position: relative;
-    transform: translateY(-300%);
+    transform: translateY(-250%);
 }
 
 /* Your existing styles go here */

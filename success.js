@@ -25,6 +25,14 @@ var score,starsEarned, levelNumber, userName;
 
 levelNumber = localStorage.getItem("GameLevel");
 userName = localStorage.getItem("UserName");
+
+  // Trivia messages for different levels
+  const triviaMessages = {
+      1: "🌳🌳 Forests cover about 31% of the Earth's land surface? These green giants are crucial for our survival, absorbing carbon dioxide and providing over half of the world's biodiversity. Sadly, we're losing forests at an alarming rate - equivalent to 27 soccer fields every minute. Protecting forests means protecting our future.🌳🌳",
+      2: "🌵🌵Deserts, often seen as barren, actually occupy about 20% of Earth's surface. These ecosystems are not just sand dunes; they are home to a myriad of life uniquely adapted to extreme conditions. However, due to human activities, deserts are expanding at an alarming rate, impacting global climates and local wildlife. Conservation of these vast lands is essential for the balance of our planet.🌵🌵",
+      3: "❄️❄️ The Arctic, a vital climate regulator, is experiencing the fastest warming on Earth, nearly twice the global average. This rapid change threatens unique wildlife and has broader implications like rising sea levels. The melting of Arctic ice also contributes to a feedback loop, accelerating global warming. Preserving the Arctic is key to our planet's health.️❄️❄️"
+  };
+
 window.onload = function() {
 fetch("https://bridgethegap-1dcbe-default-rtdb.firebaseio.com/userLevel.json")
   .then((response) => response.json())
@@ -70,7 +78,7 @@ fetch("https://bridgethegap-1dcbe-default-rtdb.firebaseio.com/userLevel.json")
           localStorage.removeItem("GameLevel")
           setTimeout(()=>{
             window.location.href = "level-select.html"
-          },2000)
+          },30000)
           // Handle successful update
         })
         .catch((error) => {
@@ -106,6 +114,12 @@ fetch("https://bridgethegap-1dcbe-default-rtdb.firebaseio.com/userLevel.json")
           // Handle the error when adding new record
         });
     }
+      // Display random trivia for the level
+      const triviaElement = document.getElementById("trivia");
+      const levelTrivia = triviaMessages[levelNumber];
+      if (triviaElement && levelTrivia) {
+          triviaElement.innerHTML = levelTrivia;
+      }
   })
   .catch((error) => {
     console.error("Error fetching data:", error);

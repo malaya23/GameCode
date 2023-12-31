@@ -5,17 +5,32 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: 'Copperplate Gothic', 'Copperplate Gothic Light', sans-serif;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure a minimum viewport height */
+    margin: 0; /* Remove body margin to avoid extra space */
 }
+
 .gap-text h6 {
     color: #fed206; /* Inner color */
     font-size: 100px;
     -webkit-text-stroke: 3px #986533; /* Stroke effect */
 }
 
+/* Media query for smaller screens (e.g., mobile devices) */
 @media (max-width: 375px) {
     .gap-text h6 {
         font-size: 50px;
+    }
+
+    /* Center text for portrait orientation */
+    @media (orientation: portrait) {
+        .gap-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     }
 }
 

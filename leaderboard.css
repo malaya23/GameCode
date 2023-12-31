@@ -45,6 +45,11 @@ ul li {
     /* font-weight: bold; */
 }
 
+.below-icons {
+    position: relative;
+    transform: translate(-7%, -100%);
+}
+
 @media (max-width: 600px) {
 
     .img-fluid {
