@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonus Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="container" class="block">
+        <div id="game-container">
+            <canvas id="canvas"></canvas>
+            <div id="pauseOverlayShooter" class="overlay">
+                <p>Build the tower</p>
+            </div>
+            <img id="blocks" src="block.png">
+            <img id="planet" src="defense2.png">
+            <img id="player" src="player.png">
+            <img id="alien" src="alien.png">
+            <img id="lobstermorph" src="lobstermorph.png">
+        </div>
+
+        <div id="stack-builder-container">
+            <canvas id="canvas2"></canvas>
+            <div id="pauseOverlayTower" class="overlay">
+                <p>Defend the PLANET against enemies</p>
+            </div>
+            <div id="divRestart" class="overlay">
+                <img id="gameOver" src="gameOver.png" />
+                <img id="restart" src="restartButton.png" onclick="showGame()" />
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="main.js"></script>
+    <script src="game.js"></script>
+    <script>
+        function showGame() {
+            document.getElementById('divRestart').style.display = 'none';
+            document.getElementById('game-container').classList.remove('hidden');
+        }
+
+        var gameWidth = window.innerWidth;
+        var gameHeight = window.innerHeight;
+        var ratio = 1.5;
+        if (gameHeight / gameWidth < ratio) {
+            gameWidth = Math.ceil(gameHeight / ratio);
+        }
+
+        function reloadGame() {
+            window.location.reload();
+        }
+
+        window.addEventListener('load', function () {
+            domReady = true;
+            var myAudio = document.getElementById("audio");
+            restart();
+            animate();
+        }, false);
+    </script>
+</body>
+
+</html>

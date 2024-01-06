@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(86, 85, 85);
+}
+
+#container {
+    display: flex;
+    height: 100vh;
+}
+
+#game-container,
+#stack-builder-container {
+    display: flex;
+    flex: 1;
+}
+
+#canvas,
+#canvas2 {
+    width: 50vw;
+    max-height: 100vh;
+    height: auto;
+    background: rgb(148, 131, 131);
+    border: none;
+}
+
+#canvas {
+    background: url('darkSky.png');
+}
+
+#canvas2 {
+    background: url('background.png');
+}
+
+
+
+
+
+
+#divRestart {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    max-height: 100vh;
+    margin: 5% !important;
+}
+
+#restart,
+#gameOver {
+    max-width: 100%;
+    position: center;
+}
+
+
+
+
+
+ p {
+     font-family: 'Copperplate Gothic', 'Copperplate Gothic Light', sans-serif;    /* Additional styling if needed */
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    /* Add any other styles you want to apply */
+}
+
+
+#planet,
+#player,
+#alien,
+#lobstermorph {
+    display: none;
+}
+
+#blocks {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 900px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
