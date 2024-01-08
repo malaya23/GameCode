@@ -51,7 +51,7 @@ const levelContainer = document.getElementById('levelContainer');
 
 function handleLevelClick(level) {
   localStorage.setItem('GameLevel', level);
-  window.location.href = 'index.html'; // Replace with your main URL
+  window.location.href = 'game.html'; // Replace with your main URL
 }
 
 // Loop through each level object and create the corresponding elements
