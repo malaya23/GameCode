@@ -442,22 +442,6 @@ class Lobstermorph extends Enemy{
             context.textAlign='center';
             let message1;
             let message2;
-            //two different text depending on if win or lose
-
-
-            // if(this.score >= this.winningScore){
-            //     message1='You win!'
-            //     message2='Your score is '+ this.score+ '!';
-            //  }
-            //  else{
-            //     message1= 'You lose!';
-            //     message1 = 'Try again!';
-            //
-            //  }
-            //  context.font = '100px Copperplate Gothic';
-            //  context.fillText(message1, this.width * 0.5, 200);
-            //  context.font = '50px Copperplate Gothic';
-            //  context.fillText(message2, this.width * 0.5, 550);
         }
         context.restore();
 

@@ -1,30 +1,77 @@
-<!DOCTYPE html>
-<html lang="en" >
+<!doctype html>
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Bridge the Gap</title>
-  <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" type="text/css" href="cloudsanimation.css">
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="landing.css">
+    <title>Landing Page!</title>
 </head>
+
 <body>
-  <div class="clouds" id="clouds">
-    <div class="cloud s1"></div>
-    <div class="cloud s2"></div>
-    <div class="cloud s3"></div>
-    <div class="cloud s4"></div>
-    <div class="cloud s5"></div>
-</div>
-<div class="container">
-  <div id="score"></div>
-  <canvas id="game" width="375" height="375" style="position: absolute;"></canvas>
-  <div id="introduction">Hold the mouse to extend a bridge and leap to the next block!</div>
-  <div id="perfect">Extra Score</div>
-  <button id="restart">Play Again</button>
- 
+<div class="container-fluid my-3">
+    <div class="d-flex justify-content-between align-items-center">
+        <img id="soundOnButton" src="images/soundON.png" alt="Play Music" width="50" height="50" style="display: block;">
+        <img id="soundOffButton" src="images/soundOFF.png" alt="Pause Music" width="50" height="50" style="display: none;">
+    </div>
+
+    <div class="d-flex mt-1 justify-content-between align-items-center">
+        <img src="images/soundOFF.png" alt="no music pic" width="50" height="50">
+        <img src="images/noADS.png" alt="music pic" width="70" height="70">
+
+    </div>
+
+    <div class="text-center my-3 text-warningn gap-text">
+        <h6>Eco Guard Hero</h6>
+    </div>
+
+    <div class="d-flex mt-1 justify-content-center align-items-center my-2">
+        <div class="circular-container">
+            <img src="images/gamegif2.gif" alt="game" width="140" height="120">
+        </div>
+    </div>
+
+    <div class="d-flex mt-1 justify-content-center align-items-center my-2">
+        <a href="login.html"><img src="images/loginbutton.png"  alt="play button pic" width="150" height="80"></a>
+        <a href="register.html"><img src="images/registerbutton.png" alt="play button pic" width="150" height="80"></a>
+    </div>
+    <div class="d-flex mt-1 justify-content-center align-items-center my-2">
+        <a href="BonusGame/index.html"><img src="images/bonusGame.png"  alt="play button pic" width="150" height="80"></a>
+        <a href="https://www.canva.com/design/DAF5JXJx5cQ/kxO5YaWfSTdOOUYA_VG-DA/watch?utm_content=DAF5JXJx5cQ&utm_campaign=celebratory_first_publish&utm_medium=link&utm_source=editor_celebratory_first_publish"><img src="images/story.png" alt="play button pic" width="150" height="80"></a>
+    </div>
+    <div class="d-flex justify-content-center align-items-center  my-4">
+        <a href="localisation.js"><img src="images/geoLocalisation.png" alt="music pic" width="70" height="75">
+            <img src="images/howtoplaybutton.png" alt="music pic" width="70" height="70">
+        <a href="leaderboard.html"><img src="images/leaderboardbutton.png" alt="leaderboard pic" width="70" height="70">
+    </div>
+
 </div>
 
-<script src="./script.js"></script>
+<audio id="bgMusic" controls autoplay loop="true" style="display: none;">
+    <source src="audio/bgmusic.mp3">
+    Your browser does not support the audio element.
+</audio>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous">
+
+</script>
+
+<script>
+    document.getElementById('playButton').addEventListener('click', function() {
+        console.log("Play button clicked");
+        document.getElementById('bgMusic').play();
+    });
+
+    document.getElementById('pauseButton').addEventListener('click', function() {
+        console.log("Pause button clicked");
+        document.getElementById('bgMusic').pause();
+    });
+</script>
 
 </body>
 </html>
